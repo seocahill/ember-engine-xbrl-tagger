@@ -1,0 +1,5 @@
+<ul data-test-role-types-menu>
+  {{#each model.roleTypes as |roleType|}}
+    <li>{{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id}}</li>
+  {{/each}}
+</ul>
