@@ -5,7 +5,7 @@ export default DS.Model.extend({
   dimensionNodes: DS.hasMany('dimension-node'),
 
   name: DS.attr('string'),
-  type: DS.attr('string'),
+  itemType: DS.attr('string'),
   substitutionGroup: DS.attr('string'),
   periodType: DS.attr('string'),
   abstract: DS.attr('string'),
