@@ -1,0 +1,12 @@
+{{link-to model.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' model.element data-test-dimension-node=true}} | 
+{{#if model.parent}}
+  {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' model.parent data-test-dimension-parent=true}} 
+{{else}} 
+  {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node'}}
+{{/if}}
+ ({{model.shortArcrole}})
+<hr>
+<nav data-test-dimension-nodes>
+  {{#each model.children as |child|}} {{link-to (concat child.name child.dimensionType) 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node'
+  child}} <br> {{/each}}
+</nav>

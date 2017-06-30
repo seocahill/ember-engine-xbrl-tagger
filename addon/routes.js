@@ -14,13 +14,10 @@ export default buildRoutes(function () {
       }, function() {
         this.route('element', {
           path: 'element/:element_id'
-        });
-        this.route('dimensions');
-        this.route('dimension-node', {
-          path: 'dimensions/:dimension_node_id'
         }, function() {
-          this.route('element', {
-            path: 'element/:element_id'
+          this.route('dimension-nodes');
+          this.route('dimension-node', {
+            path: 'dimension-nodes/:dimension_node_id'
           });
         });
       });
