@@ -8,7 +8,7 @@ export default DS.Model.extend({
   roleType: DS.belongsTo('role-type'),
   order: DS.attr('number'),
 
-  name: Ember.computed.alias('element.name'),
+  name: DS.attr('string'),
 
   descendents() {
     return this.get('children').reduce((previous, current) => {
