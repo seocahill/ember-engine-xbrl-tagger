@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  store: Ember.inject.service(),
   model() {
-    return this.store.findAll('discoverable-taxonomy-set');
+    return this.get('store').findAll('discoverable-taxonomy-set');
   },
 
   afterModel(model) {

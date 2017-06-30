@@ -7,7 +7,13 @@ const { modulePrefix, podModulePrefix } = config;
 const Eng = Engine.extend({
   modulePrefix,
   podModulePrefix,
-  Resolver
+  Resolver,
+
+  dependencies: {
+    services: [
+      'store'
+    ]
+  }
 });
 
 loadInitializers(Eng, modulePrefix, podModulePrefix);

@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  store: Ember.inject.service(),
   model(params) {
-    return this.store.findRecord('role-type', params.role_type_id)
+    return this.get('store').findRecord('role-type', params.role_type_id)
   },
 
   afterModel(model) {
