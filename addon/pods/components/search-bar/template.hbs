@@ -1,5 +1,12 @@
 <form>
-  {{input value=query type="search" key-up=(action 'filterModel') placeholder="search taxonomy" data-test-search-input=true}}
+  {{input 
+    value=query 
+    type="search" 
+    key-up=(action 'filterModel') 
+    placeholder="search taxonomy" 
+    data-test-search-input=true
+    class="form-control"
+  }}
 </form>
 {{#each results as |result|}}
   <a href="#" {{action "handleClick" result}}>{{result.name}}</a><br>

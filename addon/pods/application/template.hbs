@@ -1,4 +1,7 @@
-{{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
-<main>
+<div class="panel-heading"> 
+   {{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
+</div>
+
+<main class="panel-body">
   {{outlet}}
 </main>

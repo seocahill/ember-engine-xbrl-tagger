@@ -1,7 +1,34 @@
 {{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}} | 
-{{#if model.parent}}
-  {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
+
+<p>
+  {{#if model.parent}} 
+    {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}} 
+  {{else}}
+    {{link-to "parent" 'discoverable-taxonomy-set.role-type'}} 
+  {{/if}}
+</p>
+
+<p>This tag is for {{model.element.itemType}} data.</p>
+
+{{#if (eq model.element.periodType "duration")}}
+  <p>This tag is suitable for nominal accounts e.g. revenue and sales for the year.</p>
 {{else}}
-  {{link-to "parent" 'discoverable-taxonomy-set.role-type'}}
+  <p>This tag is suitable for real accounts e.g. opening and closing asset/liability balances.</p>
 {{/if}}
+
+{{#if (eq model.element.abstract "true")}}
+  <p>This label if for presentation only.</p>
+{{else}}
+  <form action="">
+    <div class="from-group">
+      <select class="form-control">
+        {{#each currentCell.periods as |period|}}
+          <option>{{period}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <a class='btn btn-default btn-block' href="#">Apply tag</a>
+  </form>
+{{/if}}
+
 {{outlet}}
