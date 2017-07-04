@@ -6,6 +6,12 @@
     {{#link-to 'discoverable-taxonomy-set.role-type'}}<i class="fa fa-arrow-up"></i>{{/link-to}}
 {{/if}}
 
+{{#if (eq model.name currentCell.cell.tag)}}
+  <span>Using <i class="fa fa-check"></i></span>
+{{else if (not-eq model.element.abstract "true")}}
+  <a class='btn btn-primary btn-xs' onclick={{action (mut currentCell.cell.tag) model.name}}>Use</a>
+{{/if}}
+
 {{#if (eq model.element.abstract "true")}}
   <p>This label is for presentation only.</p>
 {{else}}
@@ -17,16 +23,13 @@
     <p>This tag is suitable for real accounts i.e. opening and closing balances that will be carried forward after year end.</p>
   {{/if}}
 
-  <form action="">
-    <div class="form-group">
-      <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value"}}>>
-        {{#each currentCell.periods as |period|}}
-          <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <a class='btn btn-default btn-block' href="#">Apply tag</a>
-  </form>
+  <div class="form-group">
+    <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value"}}>>
+      {{#each currentCell.periods as |period|}}
+        <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
+      {{/each}}
+    </select>
+  </div>
 {{/if}}
 
 <p>{{link-to 'Select dimensions for this tag' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes' model.element}}</p>
