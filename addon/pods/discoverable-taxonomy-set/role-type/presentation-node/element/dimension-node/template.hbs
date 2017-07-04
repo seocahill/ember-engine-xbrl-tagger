@@ -11,7 +11,7 @@
 <nav data-test-dimension-nodes>
   {{#each model.children as |child|}}
      {{#if (eq model.shortArcrole "dimension-domain")}} 
-        <a class="btn btn-default btn-block" href="#">Pick {{child.name}}</a>
+        <a class="btn btn-default btn-block" href="#" {{action "addDimension" child}}>Pick {{child.name}}</a>
      {{else}}
         {{link-to (concat child.name child.dimensionType) 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' child}} <br> 
       {{/if}}
