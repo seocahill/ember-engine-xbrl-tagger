@@ -18,10 +18,10 @@
   {{/if}}
 
   <form action="">
-    <div class="from-group">
-      <select class="form-control">
+    <div class="form-group">
+      <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value"}}>>
         {{#each currentCell.periods as |period|}}
-          <option>{{period}}</option>
+          <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
         {{/each}}
       </select>
     </div>

@@ -1,8 +1,8 @@
 > {{link-to model.definition 'discoverable-taxonomy-set'}}
 <hr>
-<p>Tag: none</p>
-<p>Period: none</p>
-<p>Dimensions: default</p>
+<p>Tag: {{currentCell.cell.tag}}</p>
+<p>Period: {{currentCell.cell.period}}</p>
+<p>Dimensions: {{if currentCell.cell.dimensions.length "view" "default"}}</p>
 {{!--if custom show custom with view button--}}
 <hr>
 {{outlet}}
