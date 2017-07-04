@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
       const hypercubeDimension = this._hypercubeDimension(node);
       const domainMember = node.get('name');
       this.get('store').createRecord('dimension', { cell, hypercubeDimension, domainMember });
+      this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node');
     }
   },
 
