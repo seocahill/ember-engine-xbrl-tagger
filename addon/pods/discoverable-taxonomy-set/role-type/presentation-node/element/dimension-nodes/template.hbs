@@ -1,6 +1,5 @@
 <nav data-test-dimension-nodes>
-  ok {{rootNodes.length}}
-  {{#each rootNodes as |node|}} 
+  {{#each model as |node|}} 
     {{link-to node.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' node.id}}
   {{/each}}
 </nav>

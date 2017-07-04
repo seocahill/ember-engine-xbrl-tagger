@@ -1,24 +1,22 @@
-{{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}} | 
+{{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}
 
-<p>
-  {{#if model.parent}} 
-    {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}} 
-  {{else}}
-    {{link-to "parent" 'discoverable-taxonomy-set.role-type'}} 
-  {{/if}}
-</p>
-
-<p>This tag is for {{model.element.itemType}} data.</p>
-
-{{#if (eq model.element.periodType "duration")}}
-  <p>This tag is suitable for nominal accounts e.g. revenue and sales for the year.</p>
+{{#if model.parent}} 
+  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}<i class="fa fa-arrow-up"></i>{{/link-to}}
 {{else}}
-  <p>This tag is suitable for real accounts e.g. opening and closing asset/liability balances.</p>
+    {{#link-to 'discoverable-taxonomy-set.role-type'}}<i class="fa fa-arrow-up"></i>{{/link-to}}
 {{/if}}
 
 {{#if (eq model.element.abstract "true")}}
-  <p>This label if for presentation only.</p>
+  <p>This label is for presentation only.</p>
 {{else}}
+  <p>This tag is for {{model.element.itemType}} data.</p>
+
+  {{#if (eq model.element.periodType "duration")}}
+    <p>This tag is suitable for nominal accounts and fact covering the duration of the current year.</p>
+  {{else}}
+    <p>This tag is suitable for real accounts i.e. opening and closing balances that will be carried forward after year end.</p>
+  {{/if}}
+
   <form action="">
     <div class="from-group">
       <select class="form-control">
@@ -30,5 +28,7 @@
     <a class='btn btn-default btn-block' href="#">Apply tag</a>
   </form>
 {{/if}}
+
+<p>{{link-to 'Select dimensions for this tag' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes' model.element}}</p>
 
 {{outlet}}
