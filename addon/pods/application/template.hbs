@@ -1,7 +1,9 @@
-<div class="panel-heading"> 
-   {{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
-</div>
+<div class="card"> 
+  <div class="card-header">
+    {{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
+  </div>
 
-<main class="panel-body">
-  {{outlet}}
-</main>
+  <main class="card-block" style="overflow:auto;">
+    {{outlet}}
+  </main>
+</div>

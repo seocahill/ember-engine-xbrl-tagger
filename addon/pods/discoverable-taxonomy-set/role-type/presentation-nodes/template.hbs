@@ -1,9 +1,9 @@
 {{#if currentCell.cell.id}}
-<nav>
+<ul class="list-unstyled">
   {{#each rootNodes as |node|}}
-    {{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}
+    <li>{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
   {{/each}}
-</nav>
+</ul>
 {{else}}
   <p> <i class="fa fa-warning"></i> There is no data currently selected.</p>
 {{/if}}
