@@ -1,7 +1,7 @@
 > {{link-to model.definition 'discoverable-taxonomy-set'}}
 <hr>
 {{#if currentCell.cell.id}}
-  <p>Tag: {{currentCell.cell.tag}}</p>
+  <p>Tag: {{currentCell.cell.settings.name}}</p>
   <p>Period: {{currentCell.cell.period}}</p>
   <p>Dimensions: {{if currentCell.cell.dimensions.length currentCell.cell.dimensions.length "using default"}} <i class="fa fa-eye"></i> </p>
   <p><a href="#" class="btn btn-primary btn-block" {{action "updateCurrentCell"}}>Save</a></p>
