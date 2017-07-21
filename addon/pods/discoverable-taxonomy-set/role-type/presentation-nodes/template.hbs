@@ -1,4 +1,4 @@
-{{#if currentCell.cell.id}}
+{{#if currentCell}}
 <ul class="list-unstyled">
   {{#each rootNodes as |node|}}
     <li>{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
