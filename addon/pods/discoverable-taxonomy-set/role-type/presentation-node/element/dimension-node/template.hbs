@@ -1,19 +1,19 @@
-{{model.element.name}} ({{model.shortArcrole}})
-
+<p class="list-group-item">{{model.element.name}} ({{model.shortArcrole}})</p>
 {{#if model.parent}}
-  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' model.parent data-test-dimension-parent=true}}
-    <i class="fa fa-arrow-up"></i>
+  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' model.parent data-test-dimension-parent=true class="list-group-item"}}
+    <i class="fa fa-chevron-left fa-fw"></i> {{model.parent.name}}
   {{/link-to}}
-{{else}} 
-  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node'}}<i class="fa fa-arrow-up"></i>{{/link-to}}
 {{/if}}
-<hr>
-<nav data-test-dimension-nodes>
-  {{#each model.children as |child|}}
-     {{#if (eq model.shortArcrole "dimension-domain")}} 
-        <a class="btn btn-default btn-block" href="#" {{action "addDimension" child}}>Pick {{child.name}}</a>
-     {{else}}
-        {{link-to (concat child.name child.dimensionType) 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' child}} <br> 
-      {{/if}}
-  {{/each}}
-</nav>
+{{#each model.children as |child|}}
+  {{#if (eq model.shortArcrole "dimension-domain")}} 
+    <a class="list-group-item justify-content-between" href="#" {{action "addDimension" child}}>
+      <span class="truncate">{{child.name}}</span>
+      <i class="fa fa-check-square-o fa-fw"></i>
+    </a>
+  {{else}}
+    {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-node' child class="list-group-item justify-content-between"}}
+      <span class="truncate">{{child.name}} ({{child.dimensionType}})</span>
+      <i class="fa plus fa-fw"></i> 
+    {{/link-to}}
+  {{/if}}
+{{/each}}

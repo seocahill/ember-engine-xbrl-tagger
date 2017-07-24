@@ -10,5 +10,8 @@ export default Ember.Route.extend({
 
   afterModel(model) {
     this.controllerFor('application').set('searchScope', model.descendents());
+    if (Ember.isEmpty(model.get('children'))) {
+      this.replaceWith('discoverable-taxonomy-set.role-type.presentation-node.element', model.get('element'));
+    }
   }
 });
