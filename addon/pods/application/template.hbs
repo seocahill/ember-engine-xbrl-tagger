@@ -1,8 +1,8 @@
 <div class="list-group">
   <a href="#" {{action "changeDts"}} class="list-group-item">DTS: {{dts.name}}</a> 
-  {{#link-to 'discoverable-taxonomy-set.role-types' class="list-group-item"}}Role: {{currentCell.roletype.definition}}{{/link-to}}
+  {{#link-to 'discoverable-taxonomy-set.role-types' dts class="list-group-item"}}Role: {{currentCell.roletype.definition}}{{/link-to}}
   <p class="list-group-item">Value: {{currentCell.cell.value}}</p>
-  <p class="list-group-item">Period: {{currentCell.cell.period}}</p>
+   {{#link-to 'periods' class="list-group-item"}}Period: {{currentCell.cell.period}}{{/link-to}}
   <p class="list-group-item">Tag: {{currentCell.cell.settings.name}}</p>
   <p class="list-group-item">Dimensions: {{if currentCell.cell.dimensions.length currentCell.cell.dimensions.length "using default"}}</p>
 </div>

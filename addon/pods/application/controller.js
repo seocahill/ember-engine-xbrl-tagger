@@ -12,6 +12,11 @@ export default Ember.Controller.extend({
   actions: {
     navigateToResult(path, model) {
       this.transitionToRoute(path, model);
+    },
+
+    changeDts() {
+      this.set('currentCell.taxonomyId', null);
+      this.transitionToRoute('index');
     }
   }
 });

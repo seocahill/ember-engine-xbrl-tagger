@@ -1,6 +1,7 @@
 import buildRoutes from 'ember-engines/routes';
 
 export default buildRoutes(function () {
+  this.route('periods');
   this.route('discoverable-taxonomy-sets');
   this.route('discoverable-taxonomy-set', {
     path: 'discoverable-taxonomy-sets/:dts_id'
