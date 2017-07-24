@@ -1,18 +1,18 @@
-{{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}
+<h5>{{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}</h5>
 
 {{#if model.parent}} 
-  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}<i class="fa fa-arrow-up"></i>{{/link-to}}
-{{else}}
-    {{#link-to 'discoverable-taxonomy-set.role-type'}}<i class="fa fa-arrow-up"></i>{{/link-to}}
+  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent class="list-group-item"}}
+    <i class="fa fa-chevron-left fa-fw"></i> {{model.parent.name}}
+  {{/link-to}}
 {{/if}}
 
-{{#if (eq model.name currentCell.cell.tag)}}
+{{!-- {{#if (eq model.name currentCell.cell.tag)}}
   <span>Using <i class="fa fa-check"></i></span>
 {{else if (not-eq model.element.abstract "true")}}
   <a class='btn btn-primary btn-outline' onclick={{action "updateTag"}}>Use</a>
-{{/if}}
+{{/if}} --}}
 
-{{#if (eq model.element.abstract "true")}}
+{{!-- {{#if (eq model.element.abstract "true")}}
   <p>This label is for presentation only.</p>
 {{else}}
   <p>This tag is for {{model.element.itemType}} data.</p>
@@ -21,9 +21,9 @@
     <p>This tag is for nominal accounts.</p>
   {{else}}
     <p>This tag for real accounts.</p>
-  {{/if}}
-{{/if}}
+  {{/if}} --}}
+{{!-- {{/if}} --}}
 
-<p>{{link-to 'Select dimensions for this tag' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes' model.element}}</p>
+{{!-- <p>{{link-to 'Select dimensions for this tag' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes' model.element}}</p> --}}
 
 {{outlet}}
