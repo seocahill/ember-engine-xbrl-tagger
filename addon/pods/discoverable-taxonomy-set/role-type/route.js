@@ -10,6 +10,6 @@ export default Ember.Route.extend({
 
   afterModel(model) {
     this.controllerFor('application').set('searchScope', model);
-    this.set('currentCell.roletype', model);
+    this.set('currentCell.roleType', model);
   }
 });
