@@ -1,6 +1,7 @@
-<ul>
-  <li>{{link-to 'dimensions' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes'}}</li>
-  {{#each-in model.data as |key value|}}
-    <li data-test-element="{{key}}">{{key}} {{value}}</li>
-  {{/each-in}}
-</ul>
+<div class="list-group-item">
+  <h5>{{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' data-test-element-properties=true}}{{model.name}}<i class="fa fa-close fa-fw"></i>{{/link-to}}</h5>
+</div>
+<li class="list-group-item">{{link-to 'Dimensions' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes'}}</li>
+{{#each-in model.data as |key value|}}
+  <li data-test-element="{{key}}" class="list-group-item">{{key}}: {{value}}</li>
+{{/each-in}}

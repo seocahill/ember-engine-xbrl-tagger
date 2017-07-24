@@ -1,10 +1,4 @@
-<h5>{{link-to model.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}</h5>
 
-{{#if model.parent}} 
-  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent class="list-group-item"}}
-    <i class="fa fa-chevron-left fa-fw"></i> {{model.parent.name}}
-  {{/link-to}}
-{{/if}}
 
 {{!-- {{#if (eq model.name currentCell.cell.tag)}}
   <span>Using <i class="fa fa-check"></i></span>
