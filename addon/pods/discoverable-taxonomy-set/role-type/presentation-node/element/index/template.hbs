@@ -1,4 +1,8 @@
 <li class="list-group-item">{{link-to 'Dimensions' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes'}}</li>
-{{#each-in model.data as |key value|}}
-  <li data-test-element="{{key}}" class="list-group-item">{{key}}: {{value}}</li>
-{{/each-in}}
+<li class="list-group-item">data type: {{model.itemType}}</li>
+<li class="list-group-item">period type: {{model.periodType}}</li>
+{{#if (eq model.abstract "true")}}
+  <li class="list-group-item">This tag is for presentation only.</li>
+{{else}}
+  <button {{action "updateTag"}} class="btn btn-primary btn-block">Tag current cell.</button>
+{{/if}}

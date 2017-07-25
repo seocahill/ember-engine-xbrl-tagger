@@ -7,12 +7,6 @@ export default Ember.Controller.extend({
   actions: {
     updatePeriod() {
       return;
-    },
-
-    updateTag() {
-      this.get('model.element').then((data) => {
-        this.set('currentCell.cell.settings', data);
-      })
     }
   }
 });

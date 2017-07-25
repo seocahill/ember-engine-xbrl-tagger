@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  search: false,
   currentCell: Ember.inject.service(),
-
+  
   actions: {
-    updateCell() {
+    updateTag() {
       const cell = this.get('currentCell.cell');
+      cell.set('settings', this.get('model'));
       cell.save();
     }
   }
