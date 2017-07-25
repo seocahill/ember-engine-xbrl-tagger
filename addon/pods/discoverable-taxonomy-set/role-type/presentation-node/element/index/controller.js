@@ -6,7 +6,11 @@ export default Ember.Controller.extend({
   actions: {
     updateTag() {
       const cell = this.get('currentCell.cell');
-      cell.set('settings', this.get('model'));
+      const model = this.get('model');
+      cell.setProperties({
+        settings: model,
+        tag: model.get('id')
+      });
       cell.save();
     }
   }
