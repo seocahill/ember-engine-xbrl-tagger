@@ -5,8 +5,8 @@ export default Ember.Controller.extend({
   store: Ember.inject.service(),
   
   actions: {
-    browseDimensions() {
-      this.transitionToRoute('dimensions.dimension')
+    delete(dimension) {
+      dimension.destroyRecord();
     }
   }
 });

@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     async addDimension(node) {
       const cell = this.get('currentCell.cell');
       const hypercubeDimension = this._hypercubeDimension(node);
-      const domainMember = node.get('element.id');
+      const domainMember = node.get('tag');
       await this.get('store').createRecord('dimension', { cell, hypercubeDimension, domainMember }).save();
       this.transitionToRoute('dimensions');
     }
@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
   _hypercubeDimension(node) {
     const parent = node.get('parent');
     if (parent.get('shortArcrole') === 'hypercube-dimension') {
-      return parent.get('element.id');
+      return parent.get('tag');
     }
     return this._hypercubeDimension(parent);
   }

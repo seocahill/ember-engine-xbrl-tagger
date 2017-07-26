@@ -9,6 +9,7 @@ export default DS.Model.extend({
   order: DS.attr('number'),
   arcrole: DS.attr('string'),
   name: DS.attr('string'),
+  tag: DS.attr('string'),
 
   dimensionType: Ember.computed('defaultDimension', function() {
     return this.get('defaultDimension') ?  " (has default)" : " (choice required)";
