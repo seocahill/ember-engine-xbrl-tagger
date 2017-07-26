@@ -2,9 +2,7 @@
   {{#each currentCell.cell.dimensions as |dimension|}} 
     <li class="list-item-group">{{dimension.hypercubeDimension}}: {{dimension.domainMember}}</li>
   {{else if (and currentCell.cell.settings.name currentCell.cell.period)}}
-    {{#each model as |hypercube|}}
-      <li class="list-group-item">{{hypercube.name}}</li>
-    {{/each}}
+    {{link-to "Pick custom dimensions" 'dimension-nodes'}}
   {{else}}
     <li class="list-group-item">Not tagged.</li>
   {{/each}}

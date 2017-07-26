@@ -5,19 +5,19 @@ export default Ember.Controller.extend({
   store: Ember.inject.service(),
 
   actions: {
-    addDimension(node) {
+    async addDimension(node) {
       const cell = this.get('currentCell.cell');
       const hypercubeDimension = this._hypercubeDimension(node);
-      const domainMember = node.get('name');
-      this.get('store').createRecord('dimension', { cell, hypercubeDimension, domainMember });
-      this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node');
+      const domainMember = node.get('element.id');
+      await this.get('store').createRecord('dimension', { cell, hypercubeDimension, domainMember }).save();
+      this.transitionToRoute('dimensions');
     }
   },
 
   _hypercubeDimension(node) {
     const parent = node.get('parent');
     if (parent.get('shortArcrole') === 'hypercube-dimension') {
-      return parent.get('name');
+      return parent.get('element.id');
     }
     return this._hypercubeDimension(parent);
   }

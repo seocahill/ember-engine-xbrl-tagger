@@ -2,10 +2,10 @@ import buildRoutes from 'ember-engines/routes';
 
 export default buildRoutes(function () {
   this.route('periods');
-  this.route('dimensions', function() {
-    this.route('dimension-node', {
-      path: 'dimension-nodes/:dimension_node_id'
-    });
+  this.route('dimensions');
+  this.route('dimension-nodes');
+  this.route('dimension-node', {
+    path: 'dimension-nodes/:dimension_node_id'
   });
   this.route('discoverable-taxonomy-sets');
   this.route('discoverable-taxonomy-set', {
