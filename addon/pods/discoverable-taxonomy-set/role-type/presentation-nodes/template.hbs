@@ -1,9 +1,17 @@
-{{#if currentCell}}
-<ul class="list-unstyled">
-  {{#each rootNodes as |node|}}
-    <li>{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
-  {{/each}}
-</ul>
+{{#if currentCell.cell}}
+  <ul class="list-unstyled">
+    {{#each rootNodes as |node|}}
+      <li class="list-group-item">{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
+    {{/each}}
+  </ul>
+  {{#if currentCell.cell.settings.append}}
+    <p>Appended to previous item/s.</p>
+  {{else }}
+    <form>
+      <button class="btn btn-outline-primary btn-block" {{action "append"}}>Append to previous tag.</button>
+    </form>
+  {{/if}}
 {{else}}
-  <p> <i class="fa fa-warning"></i> There is no data currently selected.</p>
+  <p>No data selected.</p>
 {{/if}}
+

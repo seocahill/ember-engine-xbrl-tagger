@@ -7,5 +7,13 @@ export default Ember.Controller.extend({
 
   rootNodes: computed.filter('model.presentationNodes', function (node) {
     return node.belongsTo('parent').value() === null;
-  })
+  }),
+
+  actions: {
+    append() {
+      const cell = this.get('currentCell.cell');
+      cell.set('settings', { append: true} );
+      cell.save();
+    }
+  }
 });
