@@ -15,10 +15,11 @@
         <div class="col text-right"><a href="#" {{action "delete" dimension}}><i class="fa fa-trash fa-2x"></i></a></div>
       </div>
     </li>
-     {{link-to "Add custom dimensions" 'dimension-nodes' class="list-group-item"}}
-  {{else if (and currentCell.cell.settings.name currentCell.cell.period)}}
-    {{link-to "Pick custom dimensions" 'dimension-nodes' class="list-group-item"}}
-  {{else}}
-    <li class="list-group-item">Not tagged.</li>
   {{/each}}
 </ul>
+
+{{#if (and currentCell.cell.settings.name currentCell.cell.period)}}
+  <p>{{link-to "Add custom dimensions" 'dimension-nodes'}}</p>
+{{else}}
+  <p>Not tagged.</p>
+{{/if}}
