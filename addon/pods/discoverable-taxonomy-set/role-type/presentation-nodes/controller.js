@@ -14,6 +14,17 @@ export default Ember.Controller.extend({
       const cell = this.get('currentCell.cell');
       cell.set('settings', { append: true} );
       cell.save();
+    },
+
+    remove() {
+      const cell = this.get('currentCell.cell');
+      cell.get('dimensions').forEach((dimension) => dimension.destroyRecord());
+      cell.setProperties({
+        settings: null,
+        period: null,
+        tag: null
+      });
+      cell.save();
     }
   }
 });
