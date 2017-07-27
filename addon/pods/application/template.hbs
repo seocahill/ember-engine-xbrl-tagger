@@ -11,11 +11,11 @@
 <br>
 <div class="card"> 
   {{#if search}}
-  <div class="card-header">
-    {{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
-  </div>
+    <div class="card-header">
+      {{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
+    </div>
   {{/if}}
-  <main class="card-block" style="overflow:auto;">
+  <main class="card-block">
     {{outlet}}
   </main>
 </div>

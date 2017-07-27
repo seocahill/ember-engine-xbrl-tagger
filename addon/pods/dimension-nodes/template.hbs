@@ -1,5 +1,5 @@
   {{#each model as |node|}} 
-    {{link-to node.element.name 'dimension-node' node class="list-group-item"}}
+    {{link-to node.name 'dimension-node' node class="list-group-item"}}
   {{else}}
     <p class="list-group-item">No dimension information for this node.</p>
   {{/each}}

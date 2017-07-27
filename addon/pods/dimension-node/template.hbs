@@ -1,4 +1,4 @@
-<p class="list-group-item">{{model.element.name}} ({{model.shortArcrole}})</p>
+<p class="list-group-item">{{model.name}} ({{model.shortArcrole}})</p>
 {{#if model.parent}}
   {{#link-to 'dimension-node' model.parent data-test-dimension-parent=true class="list-group-item"}}
     <i class="fa fa-chevron-left fa-fw"></i> {{model.parent.name}}
