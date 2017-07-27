@@ -5,6 +5,7 @@ export default DS.Model.extend({
   element: DS.belongsTo('element'),
   children: DS.hasMany('presentation-node', { inverse: 'parent' }),
   parent: DS.belongsTo('presentation-node', { inverse: 'children' }),
+  alias: DS.belongsTo('presentation-node', { inverse: null }),
   roleType: DS.belongsTo('role-type'),
   order: DS.attr('number'),
 
