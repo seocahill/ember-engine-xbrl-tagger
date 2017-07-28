@@ -1,25 +1,15 @@
-<ul class="list-group">
-  {{#each currentCell.cell.dimensions as |dimension|}} 
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col-10">
-          <div class="row">
-            <div class="col">
-               {{dimension.hypercubeDimension}}
-            </div>
-            <div class="col">
-              {{dimension.domainMember}}
-            </div>
-          </div>
-        </div>
-        <div class="col text-right"><a href="#" {{action "delete" dimension}}><i class="fa fa-trash fa-2x"></i></a></div>
-      </div>
-    </li>
-  {{/each}}
-</ul>
-
 {{#if (and currentCell.cell.settings.name currentCell.cell.period)}}
-  <p>{{link-to "Add custom dimensions" 'dimension-nodes'}}</p>
+  <form>
+    <div class="form-group">
+      <select multiple onchange={{action "selectDimensions"}} class="form-control">
+          {{#each model as |dimension|}}
+            <option value={{dimension.id}} selected={{contains dimension.id cellDimensionIds}}>{{dimension.domainMember}}</option>
+          {{/each}}
+      </select>
+    </div>
+    <button {{action "saveCell"}} class="btn btn-outline-primary btn-block">Save</button>
+    {{link-to "Add more dimensions" 'dimension-nodes' class="btn btn-outline-primary btn-block"}}
+  </form>
 {{else}}
   <p>Not tagged.</p>
 {{/if}}
