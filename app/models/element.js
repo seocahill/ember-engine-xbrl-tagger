@@ -13,5 +13,8 @@ export default DS.Model.extend({
   substitutionGroup: DS.attr('string'),
   periodType: DS.attr('string'),
   abstract: DS.attr('string'),
-  nillable: DS.attr('string')
+  nillable: DS.attr('string'),
+  tupleId: DS.attr('string'),
+  minOccurs: DS.attr('number'),
+  maxOccurs: DS.attr('number')
 });
