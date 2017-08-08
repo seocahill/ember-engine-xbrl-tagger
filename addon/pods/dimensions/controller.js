@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     },
 
     saveCell() {
-      this.get('dimensions').forEach((dimension) => dimension.save());
+      this.get('currentCell.cell').save();
     }
   }
 });
