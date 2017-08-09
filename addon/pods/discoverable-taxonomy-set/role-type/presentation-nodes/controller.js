@@ -18,11 +18,11 @@ export default Ember.Controller.extend({
 
     remove() {
       const cell = this.get('currentCell.cell');
-      cell.get('dimensions').forEach((dimension) => dimension.destroyRecord());
       cell.setProperties({
         settings: null,
         period: null,
-        tag: null
+        tag: null,
+        dimensions: [],
       });
       cell.save();
     }
