@@ -14,12 +14,13 @@ export default Ember.Component.extend({
   _filterModel() {
     const query = this.get('query');
     if (Ember.isBlank(query)) {
-      return;
+      this.set('results', null);
+    } else {
+      const results = this.get('model').filter((item) => {
+        return item.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
+      });
+      this.set('results', results);
     }
-    const results = this.get('model').filter((item) => {
-      return item.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
-    });
-    this.set('results', results);
   },
 
   actions: {
