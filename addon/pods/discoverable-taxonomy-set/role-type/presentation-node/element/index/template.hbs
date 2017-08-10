@@ -17,14 +17,7 @@
         {{/each}}
       </select>
     </div>
-    <div class="form-group">
-      <select class="form-control">
-        <option value="none">default dimensions</option>
-        {{#each dimensions as |dimension|}}
-          <option value={{dimension.id}}>{{dimension.domainMember}}</option>
-        {{/each}}
-      </select>
-    </div>
+    {{dimension-select}}
     <button {{action "updateTag"}} class="btn btn-primary btn-block">Tag current cell.</button>
   </form>
 {{/unless}}

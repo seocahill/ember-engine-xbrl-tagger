@@ -1,12 +1,6 @@
 {{#if (and currentCell.cell.settings.name currentCell.cell.period)}}
   <form>
-    <div class="form-group">
-      <select multiple onchange={{action "selectDimensions"}} class="form-control">
-          {{#each model as |dimension|}}
-            <option value={{dimension.id}} selected={{contains dimension.id cellDimensionIds}}>{{dimension.domainMember}}</option>
-          {{/each}}
-      </select>
-    </div>
+    {{dimension-select}}
     <button {{action "saveCell"}} class="btn btn-outline-primary btn-block">Save</button>
     {{link-to "Add more dimensions" 'dimension-nodes' class="btn btn-outline-primary btn-block"}}
   </form>
