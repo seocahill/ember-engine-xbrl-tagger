@@ -1,10 +1,10 @@
 <div class="list-group">
   <a href="#" {{action "changeDts"}} class="list-group-item">DTS: {{dts.name}}</a> 
   {{#link-to 'discoverable-taxonomy-set.role-types' currentCell.taxonomyId class="list-group-item"}}Role: {{currentCell.roleType.definition}}{{/link-to}}
-  {{#link-to 'value' class="list-group-item"}}Value: {{currentCell.cell.value}}{{/link-to}}
+  {{#link-to 'value' class="list-group-item"}}<span class="truncate">Value: {{currentCell.cell.value}}</span>{{/link-to}}
   {{#link-to 'periods' class="list-group-item"}}Period: {{currentCell.cell.period}}{{/link-to}}
   {{#link-to 'discoverable-taxonomy-set.role-type.presentation-nodes' currentCell.taxonomyId currentCell.roleType.id class="list-group-item"}}
-    Tag: {{if currentCell.cell.settings.append "Appended" currentCell.cell.settings.name}}
+    <span class="truncate">Tag: {{if currentCell.cell.settings.append "Appended" currentCell.cell.settings.name}}</span>
   {{/link-to}}
   {{#link-to 'dimensions' class="list-group-item"}}Dimensions: {{if currentCell.cell.dimensions.length currentCell.cell.dimensions.length "using default"}}{{/link-to}}
 </div>
