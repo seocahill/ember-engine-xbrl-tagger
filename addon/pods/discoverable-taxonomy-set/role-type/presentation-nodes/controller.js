@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
   actions: {
     append() {
       const cell = this.get('currentCell.cell');
-      cell.set('settings', { append: true} );
+      cell.set('settings', { append: true } );
       cell.save();
     },
 

@@ -1,6 +1,7 @@
 import buildRoutes from 'ember-engines/routes';
 
 export default buildRoutes(function () {
+  this.route('value');
   this.route('periods');
   this.route('dimensions');
   this.route('dimension-nodes');
