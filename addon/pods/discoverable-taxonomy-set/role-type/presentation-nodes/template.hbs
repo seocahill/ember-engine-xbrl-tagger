@@ -7,6 +7,7 @@
   {{#if currentCell.cell.settings.append}}
     <p>Appended to previous item/s.</p>
   {{else }}
+    {{search-bar model=model.presentationNodes data-test-search-bar=true}}
     <form>
       <button class="btn btn-outline-primary btn-block" {{action "append"}}>Append to previous tag.</button>
       <button class="btn btn-outline-danger btn-block" {{action "remove"}}>Remove current tag.</button>
