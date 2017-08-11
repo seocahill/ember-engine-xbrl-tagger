@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   currentCell: Ember.inject.service(),
   router: Ember.inject.service(),
+  cell: Ember.computed.alias('currentCell.cell'),
 
   actions: {
     updateTag() {
@@ -12,6 +13,9 @@ export default Ember.Component.extend({
         settings: model,
         tag: model.get('id')
       });
+      if (Ember.isEmpty(cell.get('period'))) {
+        cell.set('period', this.get('currentCell.periods.firstObject'));
+      }
       cell.save();
     },
 

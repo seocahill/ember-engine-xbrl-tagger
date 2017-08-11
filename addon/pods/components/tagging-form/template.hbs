@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li class="list-group-item"><a href="#" {{action "linkToAllNodes"}}>All nodes</a></li>
+  <li class="list-group-item"><a href="#" {{action "linkToAllNodes"}}>{{model.label}}<i class="fa fa-chevron-up fa-fw"></i></a></li>
   <li class="list-group-item">data type: {{model.itemType}}</li>
   <li class="list-group-item">period type: {{model.periodType}}</li>
   {{#if (eq model.abstract "true")}}
@@ -10,9 +10,9 @@
 <br>
 <form>
   <div class="form-group">
-    <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value" }}>
+    <select class="form-control" onchange={{action (mut cell.period) value="target.value" }}>
         {{#each currentCell.periods as |period|}}
-          <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
+          <option value={{period}} selected={{eq cell.period period}}>{{period}}</option>
         {{/each}}
       </select>
   </div>
