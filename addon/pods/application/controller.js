@@ -17,6 +17,16 @@ export default Ember.Controller.extend({
     changeDts() {
       this.set('currentCell.taxonomyId', null);
       this.transitionToRoute('index');
+    },
+
+    linkToTag() {
+      const { taxonomyId, roleType, cell } = this.get('currentCell');
+      const tag = cell.get('tag');
+      if (tag) {
+        this.transitionToRoute('element', tag);
+      } else {
+        this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-nodes', taxonomyId, roleType.id)
+      }
     }
   }
 });

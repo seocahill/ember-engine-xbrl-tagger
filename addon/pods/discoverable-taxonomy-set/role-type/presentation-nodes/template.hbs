@@ -5,7 +5,7 @@
     {{/each}}
   </ul>
   {{#if currentCell.cell.settings.append}}
-    <p>Appended to previous item/s.</p>
+    <p>Appended to previous item/s. <a href="#" {{action "remove"}}>remove</a></p>
   {{else }}
     {{search-bar model=model.presentationNodes data-test-search-bar=true}}
     <form>
