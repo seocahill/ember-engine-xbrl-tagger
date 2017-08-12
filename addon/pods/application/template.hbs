@@ -4,7 +4,7 @@
   {{#link-to 'value' class="list-group-item"}}<span class="truncate">Value: {{currentCell.cell.value}}</span>{{/link-to}}
   {{#link-to 'periods' class="list-group-item"}}Period: {{currentCell.cell.period}}{{/link-to}}
   <a href="#" {{action "linkToTag"}} class="list-group-item">
-    <span class="truncate">Tag: {{if currentCell.cell.settings.append "Appended" currentCell.cell.settings.name}}</span>
+    <span class="truncate">Tag: {{if currentCell.cell.settings.append "Appended" currentCell.cell.settings.name}} {{if hasTuple "(tuple)"}}</span>
   </a>
   {{#link-to 'dimensions' class="list-group-item"}}Dimensions: {{if currentCell.cell.dimensions.length currentCell.cell.dimensions.length "using default"}}{{/link-to}}
 </div>
