@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.mount('ember-xbrl-tagger', { as: 'tagger' });
 });
 
 export default Router;

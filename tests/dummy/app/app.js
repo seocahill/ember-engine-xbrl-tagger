@@ -5,12 +5,20 @@ import config from './config/environment';
 
 let App;
 
-Ember.MODEL_FACTORY_INJECTIONS = true;
-
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver
+  Resolver,
+  engines: {
+    emberXbrlTagger: {
+      dependencies: {
+        services: [
+          'current-cell',
+          'store'
+        ]
+      }
+    }
+  }
 });
 
 loadInitializers(App, config.modulePrefix);
