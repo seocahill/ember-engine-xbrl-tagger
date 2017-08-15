@@ -1,15 +1,3 @@
-h1 {
-  font-size: 1.2rem;
-}
-
-h2 {
-  font-size: 1.15rem;
-}
-
-h3 {
-  font-size: 1.1rem;
-}
-
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
