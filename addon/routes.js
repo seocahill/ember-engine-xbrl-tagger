@@ -25,11 +25,6 @@ export default buildRoutes(function () {
       }, function() {
         this.route('element', {
           path: 'element/:element_id'
-        }, function() {
-          this.route('dimension-nodes');
-          this.route('dimension-node', {
-            path: 'dimension-nodes/:dimension_node_id'
-          });
         });
       });
     });

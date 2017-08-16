@@ -4,4 +4,26 @@
     {{/link-to}}
   </h6>
 </div>
-{{outlet}}
+<ul class="list-group">
+  <li class="list-group-item">{{link-to 'Dimensions' 'discoverable-taxonomy-set.role-type.presentation-node.element.dimension-nodes'}}</li>
+  <li class="list-group-item">data type: {{model.itemType}}</li>
+  <li class="list-group-item">period type: {{model.periodType}}</li>
+  {{#if (eq model.abstract "true")}}
+  <li class="list-group-item">This tag is for presentation only.</li>
+  {{/if}}
+</ul>
+{{#unless (eq model.abstract "true")}}
+<br>
+<form>
+  <div class="form-group">
+    <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value" }}>
+        <option value="none">no period</option>
+        {{#each currentCell.periods as |period|}}
+          <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
+        {{/each}}
+      </select>
+  </div>
+  {{dimension-select}}
+  <button {{action "updateTag"}} class="btn btn-primary btn-block">Tag current cell.</button>
+</form>
+{{/unless}}
