@@ -16,4 +16,9 @@ export default function () {
 
   this.get('/elements');
   this.get('/elements/:id');
+
+  this.get('/labels');
+  this.get('/labels/:id');
+  
+  this.get('/dimensions');
 }

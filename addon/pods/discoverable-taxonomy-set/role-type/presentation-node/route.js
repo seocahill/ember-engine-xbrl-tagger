@@ -8,9 +8,8 @@ export default Ember.Route.extend({
   },
 
   afterModel(model) {
-    // this.controllerFor('application').set('searchScope', model.descendents());
     if (Ember.isEmpty(model.get('children')) && Ember.isEmpty(model.get('alias.children'))) {
-      this.replaceWith('discoverable-taxonomy-set.role-type.presentation-node.element', model.get('element'));
+      this.transitionTo('discoverable-taxonomy-set.role-type.presentation-node.element', model.get('element.id'));
     }
   }
 });

@@ -2,5 +2,6 @@ import { Model, hasMany } from 'ember-cli-mirage';
 
 export default Model.extend({
   presentationNodes: hasMany(),
-  dimensionNodes: hasMany()
+  dimensionNodes: hasMany(),
+  labels: hasMany()
 });
