@@ -64,14 +64,6 @@ export default [
       "order": "2"
     },
     {
-      "id": "15",
-      "elementId": "uk-bus_UKCompaniesHouseRegisteredNumber",
-      "name": "UKCompaniesHouseRegisteredNumber",
-      "parentId": "8",
-      "roleTypeId": "1",
-      "order": "1"
-    },
-    {
       "id": "9",
       "elementId": "uk-bus_UKVATRegistrationNumber",
       "name": "UKVATRegistrationNumber",
@@ -116,6 +108,14 @@ export default [
       "elementId": "uk-bus_NameEntityOfficer",
       "name": "NameEntityOfficer",
       "parentId": "13",
+      "roleTypeId": "1",
+      "order": "1"
+    },
+    {
+      "id": "15",
+      "elementId": "uk-bus_UKCompaniesHouseRegisteredNumber",
+      "name": "UKCompaniesHouseRegisteredNumber",
+      "parentId": "8",
       "roleTypeId": "1",
       "order": "1"
     }

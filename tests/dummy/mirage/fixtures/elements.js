@@ -1731,7 +1731,8 @@ export default [
       "itemType": "xbrli:stringItemType",
       "substitutionGroup": "xbrli:item",
       "periodType": "duration",
-      "nillable": "true"
+      "nillable": "true",
+      "labelIds": [2]
     },
     {
       "id": "uk-bus_NameMainContactPerson",
