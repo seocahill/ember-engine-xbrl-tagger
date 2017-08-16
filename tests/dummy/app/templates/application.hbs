@@ -1,3 +1,43 @@
-<h1>Tagger test app</h1>
-
-{{outlet}}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6">
+      <div class="table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th></th>
+            <th>CY</th>
+            <th>PY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sales</td>
+            <td>(1)</td>
+            <td>134</td>
+            <td>1234</td>
+          </tr>
+          <tr>
+            <td>Purchases</td>
+            <td>(2)</td>
+            <td>1341</td>
+            <td>13241234</td>
+          </tr>
+          <tr>
+            <td>Bank</td>
+            <td>(4)</td>
+            <td>356356</td>
+            <td>3563456</td>
+          </tr>
+          <tr>
+            <td>Creitors</td>
+            <td>(5)</td>
+            <td>-134132</td>
+            <td>-3535435</td>
+          </tr>
+        </tbody>
+      </div>
+    </div>
+    <div class="col-6"> {{outlet}}</div>
+  </div>
+</div>
