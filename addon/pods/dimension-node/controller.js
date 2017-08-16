@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
   store: Ember.inject.service(),
+  
   taxonomy: Ember.computed('currentCell.taxonomyId', function () {
     return this.get('store').peekRecord('discoverable-taxonomy-set', this.get('currentCell.taxonomyId'));
   }),

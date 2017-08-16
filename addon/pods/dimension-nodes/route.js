@@ -7,6 +7,8 @@ export default Ember.Route.extend({
   async model() {
     const element = await this.get('store').findRecord('element', this.get('currentCell.cell.tag'));
     const nodes = await element.get('dimensionNodes');
-    return nodes.filter((node) => node.get('arcrole') === "http://xbrl.org/int/dim/arcrole/all");
+    return nodes.filter((node) => {
+      return node.get('arcrole') === "http://xbrl.org/int/dim/arcrole/all"
+    });
   }
 });

@@ -1732,7 +1732,8 @@ export default [
       "substitutionGroup": "xbrli:item",
       "periodType": "duration",
       "nillable": "true",
-      "labelIds": [2]
+      "labelIds": [2],
+      "dimensionNodeIds": [1,2,3,4,5,6,7,8]
     },
     {
       "id": "uk-bus_NameMainContactPerson",

@@ -16,7 +16,7 @@ export default DS.Model.extend({
   }),
 
   shortArcrole: Ember.computed('arcrole', function() {
-    return this.get('arcrole').split('/').get('lastObject');
+    return this.get('arcrole').split('/').pop();
   }),
 
   defaultDimension: Ember.computed(function() {
