@@ -12,7 +12,8 @@ const Eng = Engine.extend({
   dependencies: {
     services: [
       'current-cell',
-      'store'
+      'store',
+      'router'
     ]
   }
 });

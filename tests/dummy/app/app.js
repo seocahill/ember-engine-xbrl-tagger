@@ -14,7 +14,8 @@ App = Ember.Application.extend({
       dependencies: {
         services: [
           'current-cell',
-          'store'
+          'store',
+          'router'
         ]
       }
     }
