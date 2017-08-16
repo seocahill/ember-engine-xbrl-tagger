@@ -5,7 +5,9 @@ export default Ember.Route.extend({
   currentCell: Ember.inject.service(),
   
   model(params) {
-    return this.get('store').findRecord('role-type', params.role_type_id)
+    return this.get('store').findRecord('role-type', params.role_type_id, {
+      include: 'presentation-nodes.element'
+    });
   },
 
   afterModel(model) {

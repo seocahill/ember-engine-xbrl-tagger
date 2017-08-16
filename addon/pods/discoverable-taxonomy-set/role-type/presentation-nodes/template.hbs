@@ -1,13 +1,13 @@
 {{#if currentCell.cell}}
   <ul class="list-unstyled">
-    {{#each rootNodes as |node|}}
+    {{#each model as |node|}}
       <li class="list-group-item">{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
     {{/each}}
   </ul>
   {{#if currentCell.cell.settings.append}}
     <p>Appended to previous item/s. <a href="#" {{action "remove"}}>remove</a></p>
   {{else }}
-    {{search-bar model=model.presentationNodes data-test-search-bar=true}}
+    {{search-bar model=nodes data-test-search-bar=true}}
     <form>
       <button class="btn btn-outline-primary btn-block" {{action "append"}}>Append to previous tag.</button>
       <button class="btn btn-outline-danger btn-block" {{action "remove"}}>Remove current tag.</button>

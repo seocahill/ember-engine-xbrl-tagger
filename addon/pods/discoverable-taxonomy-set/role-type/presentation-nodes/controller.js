@@ -4,8 +4,9 @@ const { computed } = Ember;
 
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
+  nodes: Ember.computed.alias('model.presentationNodes'),
 
-  rootNodes: computed.filter('model.presentationNodes', function (node) {
+  rootNodes: computed.filter('nodes', function (node) {
     return node.belongsTo('parent').value() === null;
   }),
 
