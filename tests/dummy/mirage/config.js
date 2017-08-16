@@ -21,4 +21,5 @@ export default function () {
   this.get('/labels/:id');
   
   this.get('/dimensions');
+  this.post('/dimensions');
 }

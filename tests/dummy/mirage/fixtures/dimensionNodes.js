@@ -12,9 +12,10 @@ export default [
         "id": "2",
         "roleTypeId": "1",
         "elementId": "uk-bus_ThirdPartyAgentTypeDimension",
-        "name": "ThirdPartyAgentTypeDimension",
+        "name": "Third Party Agent Type Dimension",
         "parentId": "1",
         "order": "1",
+        "tag": "ThirdPartyAgentTypeDimension",
         "arcrole": "http://xbrl.org/int/dim/arcrole/hypercube-dimension"
     },
     {
@@ -30,7 +31,8 @@ export default [
         "id": "4",
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityAccountantsOrAuditors",
-        "name": "EntityAccountantsOrAuditors",
+        "name": "Entity Accountants Or Auditors",
+        "tag": "EntityAccountantsOrAuditors",
         "parentId": "3",
         "order": "1",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
@@ -40,6 +42,7 @@ export default [
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityBankers",
         "name": "EntityBankers",
+        "tag": "EntityBankers",
         "parentId": "3",
         "order": "2",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
@@ -49,6 +52,7 @@ export default [
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityLawyersOrLegalAdvisers",
         "name": "EntityLawyersOrLegalAdvisers",
+        "tag": "EntityLawyersOrLegalAdvisers",
         "parentId": "3",
         "order": "3",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
@@ -58,6 +62,7 @@ export default [
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityPublicRelationsAdvisers",
         "name": "EntityPublicRelationsAdvisers",
+        "tag": "EntityPublicRelationsAdvisers",
         "parentId": "3",
         "order": "4",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
@@ -67,6 +72,7 @@ export default [
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityRegistrationAgents",
         "name": "EntityRegistrationAgents",
+        "tag": "EntityRegistrationAgents",
         "parentId": "3",
         "order": "5",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
@@ -76,6 +82,7 @@ export default [
         "roleTypeId": "1",
         "elementId": "uk-bus_EntityUnderwriters",
         "name": "EntityUnderwriters",
+        "tag": "EntityUnderwriters",
         "parentId": "3",
         "order": "6",
         "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member"
