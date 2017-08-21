@@ -1,7 +1,7 @@
 <div style="height:45vh;overflow:auto">
-  <div class="list-group">
+  <div class="list-group" data-test-role-types>
     {{#each model.roleTypes as |roleType|}}
-      {{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id class="list-group-item"}}
+      {{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id class="list-group-item" data-test-role-id=roleType.id}}
     {{/each}}
   </div>
 </div>

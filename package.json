@@ -45,6 +45,7 @@
     "ember-resolver": "^4.0.0",
     "ember-router-service-polyfill": "^1.0.1",
     "ember-source": "~2.13.0",
+    "ember-test-selectors": "^0.3.7",
     "loader.js": "^4.2.3"
   },
   "engines": {

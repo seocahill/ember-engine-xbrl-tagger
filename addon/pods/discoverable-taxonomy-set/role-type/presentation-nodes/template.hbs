@@ -1,5 +1,5 @@
 {{#if currentCell.cell}}
-  <ul class="list-unstyled">
+  <ul class="list-group">
     {{#each model as |node|}}
       <li class="list-group-item">{{link-to (if node.name node.name "no name") 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}</li>
     {{/each}}
