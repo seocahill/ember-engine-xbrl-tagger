@@ -29,7 +29,7 @@ export default Ember.Component.extend({
     },
 
     handleClick(model) {
-      this.get('router').transitionTo("client.account-set.ember-xbrl-tagger.discoverable-taxonomy-set.role-type.presentation-node", model);
+      this.get('router').transitionTo("tagger.discoverable-taxonomy-set.role-type.presentation-node", model.get('id'));
       this.setProperties({results: [], query: null});
     }
   }
