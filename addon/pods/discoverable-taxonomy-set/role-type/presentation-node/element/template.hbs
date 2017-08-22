@@ -13,13 +13,13 @@
 {{#unless (eq model.abstract "true")}}
 <form class="form p-3">
   <div class="form-group">
-    <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value" }}>
+    <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value"}} data-test-period-select>
       {{#each currentCell.periods as |period|}}
         <option value={{period}} selected={{eq currentCell.cell.period period}}>{{period}}</option>
       {{/each}}
     </select>
   </div>
-  {{dimension-select}}
+  {{dimension-select data-test-dimension-select="true"}}
   <button {{action "updateTag"}} class="btn btn-primary btn-block">Tag current cell.</button>
 </form>
 {{/unless}}
