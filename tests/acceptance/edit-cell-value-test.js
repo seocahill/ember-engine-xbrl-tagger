@@ -1,7 +1,11 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | edit cell value');
+moduleForAcceptance('Acceptance | edit cell value', {
+  afterEach() {
+    if (server !== undefined) { server.shutdown(); }
+  }
+});
 
 test('View cell and tagged cell values', async function(assert) {
   await visit('/tagger');

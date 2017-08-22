@@ -1,7 +1,11 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | choose DTS');
+moduleForAcceptance('Acceptance | choose DTS', {
+  afterEach() {
+    if (server !== undefined) { server.shutdown(); }
+  }
+});
 
 test('choose discoverable taxonomy set', async function(assert) {
   await visit('/tagger');

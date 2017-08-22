@@ -1,7 +1,11 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | select cell period');
+moduleForAcceptance('Acceptance | select cell period', {
+  afterEach() {
+    if (server !== undefined) { server.shutdown(); }
+  }
+});
 
 test('Select cell period', async function (assert) {
   await visit('/tagger');

@@ -1,5 +1,8 @@
 /* eslint-env node */
 
 module.exports = {
-  useBabelInstrumenter: true
+  useBabelInstrumenter: true,
+  coverageEnvVar: 'COVERAGE',
+  reporters: ['lcov', 'html'],
+  coverageFolder: 'coverage'
 }
