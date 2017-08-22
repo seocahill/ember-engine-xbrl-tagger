@@ -1,9 +1,9 @@
-{{#if (and currentCell.cell.settings.name currentCell.cell.period)}}
-  <form>
-    {{dimension-select}}
-    <button {{action "saveCell"}} class="btn btn-outline-primary btn-block">Save</button>
+<form>
+  {{dimension-select data-test-dimension-select="true"}}
+  <button {{action "saveCell"}} class="btn btn-outline-primary btn-block">Save</button>
+   {{#if currentCell.cell.tag}}
     {{link-to "Add more dimensions" 'dimension-nodes' class="btn btn-outline-primary btn-block"}}
-  </form>
-{{else}}
-  <p>Not tagged.</p>
-{{/if}}
+  {{else}}
+     <p>Choose a tag first before attempting to add more dimensions.</p>
+  {{/if}}
+</form>

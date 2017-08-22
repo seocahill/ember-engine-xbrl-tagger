@@ -5,9 +5,9 @@
       <i class="fa fa-chevron-left fa-fw"></i> {{model.parent.name}}
     {{/link-to}}
   {{/if}}
-  {{#each model.children as |child|}}
+  {{#each model.children as |child idx|}}
     <li class="list-group-item flex-row">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" data-test-dimension-node={{idx}}>
         {{#if (eq child.shortArcrole "domain-member")}}
           <div class="p-2">
             <a href="#" class="btn btn-secondary btn-sm" {{action "addDimension" child}}><i class="fa fa-plus fa-fw"></i></a>

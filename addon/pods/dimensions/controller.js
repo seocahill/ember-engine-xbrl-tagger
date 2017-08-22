@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
-  store: Ember.inject.service(),
   dimensions: Ember.computed.alias('currentCell.cell.dimensions'),
   cellDimensionIds: Ember.computed.mapBy('dimensions', 'id'),
   
