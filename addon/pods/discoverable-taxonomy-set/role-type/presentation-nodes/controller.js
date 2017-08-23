@@ -1,14 +1,8 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
-
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
   nodes: Ember.computed.alias('model.presentationNodes'),
-
-  rootNodes: computed.filter('nodes', function (node) {
-    return node.belongsTo('parent').value() === null;
-  }),
 
   actions: {
     append() {

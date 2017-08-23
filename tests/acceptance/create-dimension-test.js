@@ -30,4 +30,18 @@ test('Create dimension for tag', async function (assert) {
   await find('[data-test-dimension-select] option[value=2]').prop('selected', true).trigger('change');
   assert.equal(find('[data-test-dimension-select] select').val().join(","), "1,2");
 });
+
+test('Update dimension for tag', async function (assert) {
+  await visit('/tagger');
+  await click('[data-test-cell-tag]');
+  await fillIn(find('[data-test-search-input]'), 'Officer').triggerEvent('input', 'keyup');
+  await click('.list-group a:contains("NameEntityOfficer")');
+  await click('button');
+  await click('[data-test-cell-dimensions]');
+  await visit('/tagger/dimensions');
+  assert.equal(find('[data-test-dimension-select] select').val().join(","), "");
+  await find('[data-test-dimension-select] option[value=1]').prop('selected', true).trigger('change');
+  await click('button');
+  assert.equal(find('[data-test-dimension-select] select').val().join(","), "1");
+});
      
