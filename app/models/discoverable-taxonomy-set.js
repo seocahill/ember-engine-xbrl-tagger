@@ -1,7 +1,1 @@
-import DS from 'ember-data';
-
-export default DS.Model.extend({
-  roleTypes: DS.hasMany('role-type'),
-
-  name: DS.attr('string')
-});
+export { default } from 'ember-xbrl-tagger/models/discoverable-taxonomy-set';
