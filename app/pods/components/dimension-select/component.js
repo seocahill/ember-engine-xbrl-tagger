@@ -1,0 +1,1 @@
+export { default } from 'ember-xbrl-tagger/components/dimension-select/component';

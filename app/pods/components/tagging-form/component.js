@@ -1,0 +1,1 @@
+export { default } from 'ember-xbrl-tagger/components/tagging-form/component';
