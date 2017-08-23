@@ -18,6 +18,6 @@ export default DS.Model.extend({
         previous.addObjects(current.descendents());
       }
       return previous;
-    }, []);
+    }, Ember.A([]));
   }
 });
