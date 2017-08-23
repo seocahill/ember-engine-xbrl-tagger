@@ -20,11 +20,12 @@ export default Ember.Controller.extend({
       this.transitionToRoute('index');
     },
 
-    linkToTag() {
+    async linkToTag() {
       const { taxonomyId, roleType, cell } = this.get('currentCell');
       const tag = cell.get('tag');
       if (tag) {
-        this.transitionToRoute('element', tag);
+        const nodeId = await this.get('store').peekRecord('element', tag).get('presentationNodes.firstObject.id');
+        this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node', taxonomyId, roleType.id, nodeId);
       } else {
         this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-nodes', taxonomyId, roleType.id)
       }

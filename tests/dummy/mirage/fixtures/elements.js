@@ -1733,7 +1733,8 @@ export default [
       "periodType": "duration",
       "nillable": "true",
       "labelIds": [2],
-      "dimensionNodeIds": [1,2,3,4,5,6,7,8]
+      "dimensionNodeIds": [1,2,3,4,5,6,7,8],
+      "presentationNodeIds": [14],
     },
     {
       "id": "uk-bus_NameMainContactPerson",
