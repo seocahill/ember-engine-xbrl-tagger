@@ -1,5 +1,7 @@
   {{#each model as |node|}} 
-    {{link-to node.name 'dimension-node' node class="list-group-item"}}
+    {{#link-to 'dimension-node' node class="list-group-item"}}
+      {{node.name}} {{#unless node.hasDefaults}}<em>*dimension choice required</em> {{/unless}}
+    {{/link-to}}
   {{else}}
     <p class="list-group-item">No dimension information for this node.</p>
   {{/each}}
