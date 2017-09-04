@@ -2,8 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   async model() {
-    const nodes = await this.modelFor('discoverable-taxonomy-set.role-type').get('presentationNodes');
-    this.set('nodes', nodes); // needed for search bar
+    const roleType = this.modelFor('discoverable-taxonomy-set.role-type');
+    const nodes = await roleType.get('presentationNodes');
+    this.set('nodes', nodes);
     return nodes.filter((node) => node.belongsTo('parent').value() === null);
   },
 

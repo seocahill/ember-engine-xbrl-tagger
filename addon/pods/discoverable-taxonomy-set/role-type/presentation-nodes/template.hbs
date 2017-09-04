@@ -7,7 +7,9 @@
   {{#if currentCell.cell.settings.append}}
     <p>Appended to previous item/s. <a href="#" {{action "remove"}}>remove</a></p>
   {{else }}
-    {{search-bar model=nodes data-test-search-bar=true}}
+    <div class="pt-4">
+      {{search-bar model=nodes data-test-search-bar=true viewNode=(action 'viewNode')}}
+    </div>
     <form>
       <button class="btn btn-outline-primary btn-block" {{action "append"}}>Append to previous tag.</button>
       <button class="btn btn-outline-danger btn-block" {{action "remove"}}>Remove current tag.</button>

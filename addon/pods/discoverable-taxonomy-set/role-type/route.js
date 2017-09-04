@@ -5,13 +5,11 @@ export default Ember.Route.extend({
   currentCell: Ember.inject.service(),
   
   model(params) {
-    return this.get('store').findRecord('role-type', params.role_type_id, {
-      include: 'presentation-nodes.element'
-    });
+    return this.get('store').findRecord('role-type', params.role_type_id);
   },
 
   afterModel(model) {
-    this.controllerFor('application').set('searchScope', model);
     this.set('currentCell.roleType', model);
+    this.replaceWith('discoverable-taxonomy-set.role-type.presentation-nodes');
   }
 });
