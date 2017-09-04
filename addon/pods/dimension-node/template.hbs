@@ -14,7 +14,7 @@
           </div>
         {{/if}}
         <div class="p-2">
-          <span class="truncate">{{child.name}} {{#if (eq child.shortArcrole "hypercube-dimension")}}{{unless child.defaultDimension "(no default)"}}{{/if}}</span>
+          <span class="text-truncate">{{child.name}} {{#if (eq child.shortArcrole "hypercube-dimension")}}{{unless child.defaultDimension "(no default)"}}{{/if}}</span>
         </div>
         <div class="p-2">
           {{#link-to 'dimension-node' child class="text-right"}}<i class="fa fa-chevron-right fa-fw"></i>{{/link-to}}
