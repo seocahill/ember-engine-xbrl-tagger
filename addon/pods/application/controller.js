@@ -25,8 +25,10 @@ export default Ember.Controller.extend({
       const tag = cell.get('tag');
       if (tag) {
         const element = await this.get('store').findRecord('element', tag)
-        const nodeId = await element.get('presentationNodes.firstObject.id');
-        this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node', taxonomyId, roleType.id, nodeId);
+        const node = await element.get('presentationNodes.firstObject');
+        const role = await node.get('roleType');
+        // this.set('currentCell.roleType', role);
+        this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node', taxonomyId, role.get('id'), node.get('id'));
       } else {
         this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-nodes', taxonomyId, roleType.id)
       }

@@ -10,6 +10,5 @@ export default Ember.Route.extend({
 
   afterModel(model) {
     this.set('currentCell.roleType', model);
-    this.replaceWith('discoverable-taxonomy-set.role-type.presentation-nodes');
   }
 });
