@@ -1,6 +1,6 @@
 <div class="list-group mb-2">
-  <a href="#" {{action "changeDts"}} class="list-group-item" data-test-current-dts>DTS: {{dts.name}}</a> 
-  {{#link-to 'discoverable-taxonomy-set.role-types' currentCell.taxonomyId class="list-group-item" data-test-current-role="true"}}Role: {{currentCell.roleType.definition}}{{/link-to}}
+  <a href="#" {{action "changeRole"}} class="list-group-item" data-test-current-dts>DTS: {{dts.name}}</a> 
+  {{#link-to 'discoverable-taxonomy-set.role-type' currentCell.taxonomyId currentCell.roleType class="list-group-item" data-test-current-role="true"}}Role: {{currentCell.roleType.definition}}{{/link-to}}
   {{#link-to 'value' class="list-group-item text-truncate" data-test-cell-value="true"}}Value: {{currentCell.cell.value}}{{/link-to}}
   {{#link-to 'periods' class="list-group-item" data-test-cell-period="true"}}Period: {{currentCell.cell.period}}{{/link-to}}
   <a href="#" {{action "linkToTag"}} class="list-group-item text-truncate" data-test-cell-tag>

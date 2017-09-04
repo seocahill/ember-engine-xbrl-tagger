@@ -15,6 +15,10 @@ export default Ember.Controller.extend({
       this.transitionToRoute(path, model);
     },
 
+    changeRole() {
+      this.transitionToRoute('discoverable-taxonomy-set.role-types');
+    },
+
     changeDts() {
       this.set('currentCell.taxonomyId', null);
       this.transitionToRoute('index');
