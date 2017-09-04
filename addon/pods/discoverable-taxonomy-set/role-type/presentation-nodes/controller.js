@@ -24,6 +24,10 @@ export default Ember.Controller.extend({
         dimensions: [],
       });
       cell.save();
+    },
+
+    viewNode(id) {
+      this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node', id);
     }
   }
 });

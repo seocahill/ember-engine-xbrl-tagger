@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  router: Ember.inject.service(),
   store: Ember.inject.service(),
   query: null,
   results: [],
@@ -29,7 +28,7 @@ export default Ember.Component.extend({
     },
 
     handleClick(model) {
-      this.get('router').transitionTo("tagger.discoverable-taxonomy-set.role-type.presentation-node", model.get('id'));
+      this.get('viewNode')(model.get('id'));
       this.setProperties({results: [], query: null});
     }
   }
