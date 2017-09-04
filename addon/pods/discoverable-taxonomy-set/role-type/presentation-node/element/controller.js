@@ -12,6 +12,17 @@ export default Ember.Controller.extend({
         tag: model.get('id')
       });
       cell.save();
+    },
+
+    remove() {
+      const cell = this.get('currentCell.cell');
+      cell.setProperties({
+        settings: null,
+        period: null,
+        tag: null,
+        dimensions: [],
+      });
+      cell.save();
     }
   }
 });
