@@ -1,4 +1,4 @@
-<select multiple size="3" onchange={{action "selectDimensions"}} class="form-control">
+<select multiple size="8" onchange={{action "selectDimensions"}} class="form-control">
   {{#each model as |dimension|}}
     <option value={{dimension.id}} selected={{contains dimension.id cellDimensionIds}}>{{dimension.domainMember}}</option>
   {{/each}}

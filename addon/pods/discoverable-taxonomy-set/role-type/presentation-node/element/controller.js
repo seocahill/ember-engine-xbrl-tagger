@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
         settings: model,
         tag: model.get('id')
       });
+      if (Ember.isEmpty(cell.get('period'))) {
+        cell.set('period', this.get('currentCell.periods.firstObject'));
+      }
       cell.save();
     },
 

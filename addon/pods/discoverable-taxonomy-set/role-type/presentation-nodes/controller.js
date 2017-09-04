@@ -6,11 +6,11 @@ export default Ember.Controller.extend({
 
   actions: {
     append() {
-      const { cell, cell: { settings } } = this.get('currentCell');
-      if (settings) {
-        settings.set('append', true);
-      } else {
+      const { cell } = this.get('currentCell');
+      if (Ember.isBlank(cell.get('settings'))) {
         cell.set('settings', { append: true });
+      } else {
+        cell.set('settings.append', true);
       }
       cell.save();
     },
