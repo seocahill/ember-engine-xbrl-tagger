@@ -16,5 +16,6 @@ export default DS.Model.extend({
   nillable: DS.attr('string'),
   tupleId: DS.attr('string'),
   minOccurs: DS.attr('number'),
-  maxOccurs: DS.attr('number')
+  maxOccurs: DS.attr('number'),
+  invertible: DS.attr('boolean')
 });
