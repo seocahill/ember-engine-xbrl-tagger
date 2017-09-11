@@ -17,5 +17,6 @@ export default DS.Model.extend({
   tupleId: DS.attr('string'),
   minOccurs: DS.attr('number'),
   maxOccurs: DS.attr('number'),
-  invertible: DS.attr('boolean')
+  invertible: DS.attr('boolean'),
+  mustChooseDimension: DS.attr('boolean')
 });

@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   store: Ember.inject.service(),
   currentRole: Ember.computed.alias('currentCell.roleType'),
 
-  afterModel(model) {
+  afterModel() {
     if (! this.get('currentRole')) {
       this.set('currentRole', this.get('store').peekAll('role-type').get('firstObject'));
     }

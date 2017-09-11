@@ -4,7 +4,7 @@
   {{#link-to 'value' class="list-group-item text-truncate" data-test-cell-value="true"}}Value: {{currentCell.cell.value}}{{/link-to}}
   {{#link-to 'periods' class="list-group-item" data-test-cell-period="true"}}Period: {{currentCell.cell.period}}{{/link-to}}
   <a href="#" {{action "linkToTag"}} class="list-group-item text-truncate" data-test-cell-tag>
-    Tag: {{if currentCell.cell.settings.append "Appended" currentCell.cell.settings.name}} {{if hasTuple "(tuple)"}}
+    Tag: {{if currentCell.cell.isAppended (if currentCell.cell.hasTagInfo "Appended + Tagged" "Appended") currentCell.cell.settings.name}} {{if hasTuple "(tuple)"}}
   </a>
   {{#link-to 'dimensions' class="list-group-item text-truncate" data-test-cell-dimensions="true"}}Dimensions: {{if currentCell.cell.dimensions.length currentCell.cell.dimensions.firstObject.domainMember "using default"}}{{/link-to}}
 </div>

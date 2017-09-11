@@ -8,7 +8,7 @@ moduleForAcceptance('Acceptance | navigate to tag', {
 });
 
 test('Navigate to tag and tag item', async function (assert) {
-  await visit('/tagger');
+  await visit('/tagger/discoverable-taxonomy-sets/1/role-types/1');
   await click('[data-test-cell-tag]');
   await fillIn(find('[data-test-search-input]'), 'Officer').triggerEvent('input', 'keyup');
   await click('.list-group a:contains("NameEntityOfficer")');

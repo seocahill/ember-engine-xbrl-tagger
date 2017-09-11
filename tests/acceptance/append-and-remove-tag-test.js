@@ -11,8 +11,8 @@ test('Append tag and revert', async function (assert) {
   await visit('/tagger');
   await visit('/tagger/discoverable-taxonomy-sets/1/role-types/1/presentation-nodes');
   await click('.btn-outline-primary');
-  assert.equal(find('.card .card-body p').text().trim(), 'Appended to previous item/s. remove');
-  await click('.card .card-body p a');
+  assert.equal(find('.btn-outline-info').text().trim(), 'Appended to previous item/s, click to remove.');
+  await click('.btn-outline-info');
   assert.equal(find('ul.list-group li a').text().trim(), "EntityInformationHeading");
 });
      

@@ -8,8 +8,10 @@ moduleForAcceptance('Acceptance | navigate to tag', {
 });
 
 test('Navigate to tag', async function (assert) {
-  await visit('/tagger');
+  await visit('/tagger/discoverable-taxonomy-sets/1/role-types/1');
   await click('[data-test-cell-tag]');
+  findWithAssert('div.list-group a:contains("01 - Entity Information")');
+  await click('div.list-group a:contains("01 - Entity Information")');
   findWithAssert('ul.list-group li a:contains("EntityInformationHeading")');
   await click('ul.list-group li a:contains("EntityInformationHeading")');
   findWithAssert('.list-group a:contains("EntityOfficersHeading")');

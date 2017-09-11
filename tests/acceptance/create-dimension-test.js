@@ -11,7 +11,7 @@ moduleForAcceptance('Acceptance | create dimensions', {
 });
 
 test('Create dimension for tag', async function (assert) {
-  await visit('/tagger');
+  await visit('/tagger/discoverable-taxonomy-sets/1/role-types/1');
   await click('[data-test-cell-tag]');
   await fillIn(find('[data-test-search-input]'), 'Officer').triggerEvent('input', 'keyup');
   await click('.list-group a:contains("NameEntityOfficer")');
@@ -32,7 +32,7 @@ test('Create dimension for tag', async function (assert) {
 });
 
 test('Update dimension for tag', async function (assert) {
-  await visit('/tagger');
+  await visit('/tagger/discoverable-taxonomy-sets/1/role-types/1');
   await click('[data-test-cell-tag]');
   await fillIn(find('[data-test-search-input]'), 'Officer').triggerEvent('input', 'keyup');
   await click('.list-group a:contains("NameEntityOfficer")');
