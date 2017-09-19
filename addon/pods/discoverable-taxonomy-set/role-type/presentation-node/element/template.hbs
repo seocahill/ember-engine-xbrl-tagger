@@ -24,6 +24,11 @@
   </div>
   {{dimension-select data-test-dimension-select="true"}}
   <button {{action "updateTag"}} class="btn btn-primary btn-block">Tag current cell.</button>
-  <button class="btn btn-outline-danger btn-block" {{action "remove"}}>Remove current tag.</button>
+  {{#if currentCell.cell.tag }}
+    <button class="btn btn-outline-danger btn-block" {{action "remove"}}>Remove current tag.</button>
+  {{else}}
+    <button class="btn btn-outline-secondary btn-block" {{action "autoTagCell"}}>Auto tag cell.</button>
+  {{/if}}
+  
 </form>
 {{/unless}}

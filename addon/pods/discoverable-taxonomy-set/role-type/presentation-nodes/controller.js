@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
+  store: Ember.inject.service(),
   nodes: Ember.computed.alias('model.presentationNodes'),
 
   actions: {
@@ -24,6 +25,11 @@ export default Ember.Controller.extend({
         dimensions: [],
       });
       cell.save();
+    },
+
+    async autoTagCell() {
+      const cell = await this.get('currentCell.cell').autoTag();
+      this.get('store').pushPayload(cell);
     },
 
     viewNode(id) {

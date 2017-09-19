@@ -17,6 +17,11 @@ export default Ember.Controller.extend({
       cell.save();
     },
 
+    async autoTagCell() {
+      const cell = await this.get('currentCell.cell').autoTag();
+      this.get('store').pushPayload(cell);
+    },
+
     remove() {
       const cell = this.get('currentCell.cell');
       cell.setProperties({

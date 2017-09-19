@@ -10,9 +10,11 @@ export default Ember.Component.extend({
   dimensions: Ember.computed.alias('currentCell.cell.dimensions'),
   cellDimensionIds: Ember.computed.mapBy('dimensions', 'id'),
 
-  init() {
+  async init() {
     this._super(...arguments);
-    this.set('model', this._model());
+    const model = await this._model();
+    const sortedModel = model.sortBy("name");
+    this.set('model', sortedModel);
   },
 
   _model() {

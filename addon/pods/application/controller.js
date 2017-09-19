@@ -10,6 +10,16 @@ export default Ember.Controller.extend({
     return this.get('store').peekRecord('discoverable-taxonomy-set', this.get('currentCell.taxonomyId'));
   }),
 
+  dimensions: Ember.computed.alias('currentCell.cell.dimensions'),
+
+  dimensionNames: Ember.computed('dimensions.[]', function() {
+    if (Ember.isPresent(this.get('dimensions'))) {
+      return this.get('dimensions').map((d) => d.get('name')).join(", ");
+    } else {
+      return "default dimensions"
+    }
+  }),
+
   actions: {
     navigateToResult(path, model) {
       this.transitionToRoute(path, model);
