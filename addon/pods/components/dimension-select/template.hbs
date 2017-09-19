@@ -1,5 +1,14 @@
-<select multiple size="8" onchange={{action "selectDimensions"}} class="form-control">
-  {{#each model as |dimension|}}
-    <option value={{dimension.id}} selected={{contains dimension.id cellDimensionIds}}>{{dimension.name}}</option>
+<div class="form-group">
+  {{input value=query class="form-control" placeholder="search dimensions"}}
+</div>
+<ul class="list-group">
+  {{#each searchResults as |item|}}
+    <a class="list-group-item" href="#" {{action 'addDimension' item}}><i class="fa fa-plus fa-fw"></i>{{item.name}}</a>
+  {{else}}
+    {{#each dimensions as |item|}}
+    <a class="list-group-item" href="#" {{action 'removeDimension' item}}><i class="fa fa-trash fa-fw"></i>{{item.name}}</a>
+    {{else}}
+      <li class="list-group-item">Using default dimensions</li>
+    {{/each}}
   {{/each}}
-</select>
+</ul>

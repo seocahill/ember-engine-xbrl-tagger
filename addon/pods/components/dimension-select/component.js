@@ -17,6 +17,17 @@ export default Ember.Component.extend({
     this.set('model', sortedModel);
   },
 
+  searchResults: Ember.computed('query', 'model.[]', function() {
+    const query = this.get('query');
+    if (Ember.isPresent(query)) {
+      return this.get('model').filter((dimension) => {
+        return dimension.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
+      });
+    } else {
+      return [];
+    }
+  }),
+
   _model() {
     return this.get('store').query('dimension', {
       filter: {
@@ -27,10 +38,14 @@ export default Ember.Component.extend({
 
   actions: {
 
-    selectDimensions(event) {
-      const selected = Ember.$(event.target).val();
-      const dimensions = this.get('model').filter((dimension) => selected.includes(dimension.get('id')));
-      this.set('dimensions', dimensions);
+    addDimension(dimension) {
+      const dimensions = this.get('dimensions');
+      dimensions.addObject(dimension);
+    },
+
+    removeDimension(dimension) {
+      const dimensions = this.get('dimensions');
+      dimensions.removeObject(dimension);
     },
   }
 
