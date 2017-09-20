@@ -8,7 +8,7 @@
   {{#each model.children as |child idx|}}
     <li class="list-group-item flex-row">
       <div class="d-flex justify-content-between" data-test-dimension-node={{idx}}>
-        {{#if (eq child.shortArcrole "domain-member")}}
+        {{#if (or (eq child.shortArcrole "domain-member") (eq child.shortArcrole "dimension-domain"))}}
           <div class="p-2">
             <a href="#" class="btn btn-secondary btn-sm" {{action "addDimension" child}}><i class="fa fa-plus fa-fw"></i></a>
           </div>
