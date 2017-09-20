@@ -41,6 +41,7 @@ export default Ember.Component.extend({
     addDimension(dimension) {
       const dimensions = this.get('dimensions');
       dimensions.addObject(dimension);
+      this.set('query', null);
     },
 
     removeDimension(dimension) {
