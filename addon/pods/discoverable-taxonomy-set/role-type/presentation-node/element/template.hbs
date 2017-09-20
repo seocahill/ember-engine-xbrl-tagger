@@ -15,6 +15,7 @@
 </ul>
 {{#unless (eq model.abstract "true")}}
 <form class="form p-3">
+  {{search-bar model=currentCell.roleType.presentationNodes data-test-search-bar=true viewNode=(action 'viewNode')}}
   <div class="form-group">
     <select class="form-control" onchange={{action (mut currentCell.cell.period) value="target.value"}} data-test-period-select>
       {{#each currentCell.periods as |period|}}

@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
+  store: Ember.inject.service(),
 
   actions: {
     updateTag() {
@@ -19,7 +20,12 @@ export default Ember.Controller.extend({
 
     async autoTagCell() {
       const cell = await this.get('currentCell.cell').autoTag();
+      debugger
       this.get('store').pushPayload(cell);
+    },
+
+    viewNode(id) {
+      this.transitionToRoute('discoverable-taxonomy-set.role-type.presentation-node', id);
     },
 
     remove() {
