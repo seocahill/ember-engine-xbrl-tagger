@@ -20,7 +20,6 @@ export default Ember.Controller.extend({
 
     async autoTagCell() {
       const cell = await this.get('currentCell.cell').autoTag();
-      debugger
       this.get('store').pushPayload(cell);
     },
 
