@@ -43,6 +43,7 @@ export default Ember.Component.extend({
       dimensions.addObject(dimension);
       this.set('query', null);
       this.get('updateLast')(dimension);
+      this.get('currentCell.cell').save();
     },
 
     removeDimension(dimension) {
