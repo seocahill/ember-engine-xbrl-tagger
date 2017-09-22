@@ -11,11 +11,11 @@ export default DS.Model.extend({
 
   name: DS.attr('string'),
 
-  descendents() {
+  descendants() {
     return this.get('children').reduce((previous, current) => {
       previous.addObject(current);
       if (Ember.isPresent(current.get('children'))) {
-        previous.addObjects(current.descendents());
+        previous.addObjects(current.descendants());
       }
       return previous;
     }, Ember.A([]));

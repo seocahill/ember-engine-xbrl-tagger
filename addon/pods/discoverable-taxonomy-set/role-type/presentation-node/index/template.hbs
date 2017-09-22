@@ -2,6 +2,9 @@
   <div class="list-group-item d-flex align-items-center">
     <h5 class="text-truncate mb-1">{{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}<i class="fa fa-info fa-fw"></i>{{model.name}}{{/link-to}}</h5>
   </div>
+  <div class="list-group-item">
+    {{search-bar model=nodes data-test-search-bar=true viewNode=(action 'viewNode')}}
+  </div>
   {{#if model.parent}} 
     {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent class="list-group-item d-flex align-items-center"}}
       <i class="fa fa-chevron-left fa-fw"></i> <span class="d-inline-block text-truncate">{{model.parent.name}}</span>
