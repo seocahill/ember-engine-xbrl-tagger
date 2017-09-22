@@ -1,6 +1,9 @@
 <form>
-  {{dimension-select data-test-dimension-select="true"}}
+  {{dimension-select data-test-dimension-select="true" updateLast=(action (mut last))}}
   <button {{action "saveCell"}} class="btn btn-outline-primary btn-block">Save</button>
+  {{#if last}}
+    <button {{action "updateDimensions"}} class="btn btn-outline-secondary btn-block">{{last.name}}</button>
+  {{/if}}
    {{#if currentCell.cell.tag}}
     {{link-to "Add more dimensions" 'dimension-nodes' class="btn btn-outline-primary btn-block"}}
   {{else}}
