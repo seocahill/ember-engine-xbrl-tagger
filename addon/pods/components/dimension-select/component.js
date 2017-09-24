@@ -6,6 +6,7 @@ export default Ember.Component.extend({
 
   classNames: ['form-group'],
   model: null,
+  last: null,
 
   dimensions: Ember.computed.alias('currentCell.cell.dimensions'),
   cellDimensionIds: Ember.computed.mapBy('dimensions', 'id'),
@@ -42,13 +43,14 @@ export default Ember.Component.extend({
       const dimensions = this.get('dimensions');
       dimensions.addObject(dimension);
       this.set('query', null);
-      this.get('updateLast')(dimension);
+      this.set('last', dimension);
       this.get('currentCell.cell').save();
     },
 
     removeDimension(dimension) {
       const dimensions = this.get('dimensions');
       dimensions.removeObject(dimension);
+      this.get('currentCell.cell').save();
     },
   }
 

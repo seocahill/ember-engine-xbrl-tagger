@@ -1,6 +1,9 @@
 <div class="form-group">
   {{input value=query class="form-control" placeholder="search dimensions"}}
 </div>
+{{#if last}}
+  <button {{action "addDimension" last}} class="btn btn-outline-secondary btn-block">{{last.name}}</button> 
+{{/if}}
 <ul class="list-group">
   {{#each searchResults as |item|}}
     <a class="list-group-item" href="#" {{action 'addDimension' item}}><i class="fa fa-plus fa-fw"></i>{{item.name}}</a>
