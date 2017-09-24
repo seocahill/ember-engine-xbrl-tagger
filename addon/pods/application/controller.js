@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
   currentCell: Ember.inject.service(),
   store: Ember.inject.service(),
   hasTuple: Ember.computed.bool('currentCell.cell.settings.tuple-id'),
+  pinnedNode: Ember.computed.alias('currentCell.pinnedNode'),
 
   dts: Ember.computed('currentCell.taxonomyId', function() {
     return this.get('store').peekRecord('discoverable-taxonomy-set', this.get('currentCell.taxonomyId'));
@@ -23,6 +24,10 @@ export default Ember.Controller.extend({
   actions: {
     navigateToResult(path, model) {
       this.transitionToRoute(path, model);
+    },
+
+    unpinNode() {
+      this.set('pinnedNode', null);
     },
 
     changeRole() {

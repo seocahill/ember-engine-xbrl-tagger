@@ -1,6 +1,8 @@
 <div class="list-group" data-test-presentation-node-nav>
-  <div class="list-group-item d-flex align-items-center">
-    <h5 class="text-truncate mb-1">{{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}}<i class="fa fa-info fa-fw"></i>{{model.name}}{{/link-to}}</h5>
+  <div class="list-group-item d-inline-flex justify-content-between">
+    <div class="p-2"><h5>{{model.name}}</h5></div>
+    <div class="p-2">{{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true class="btn btn-outline-primary btn-sm"}}<i class="fa fa-info fa-fw fa-lg"></i>{{/link-to}}</div>
+    <div class="p-2"><a href="#" {{action 'pinNode'}} class="btn btn-outline-primary btn-sm"><i class="fa fa-fw fa-thumb-tack fa-lg"></i></a></div>
   </div>
   <div class="list-group-item">
     {{search-bar model=nodes data-test-search-bar=true viewNode=(action 'viewNode')}}
