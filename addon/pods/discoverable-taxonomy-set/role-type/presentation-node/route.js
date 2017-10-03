@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   },
 
   afterModel(model) {
-    if (Ember.isEmpty(model.get('children')) && Ember.isEmpty(model.get('alias.children'))) {
+    if (Ember.isEmpty(model.get('children'))) {
       this.transitionTo('discoverable-taxonomy-set.role-type.presentation-node.element', model.get('element.id'));
     }
   }
