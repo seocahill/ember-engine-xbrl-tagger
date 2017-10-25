@@ -13,5 +13,5 @@ test('returns descendents of node', async function(assert) {
     const child = store.createRecord('presentation-node', { parent: model });
     store.createRecord('presentation-node', { parent: child });
   });
-  assert.equal(model.descendents().length, 2);
+  assert.equal(model.descendants().length, 2);
 });

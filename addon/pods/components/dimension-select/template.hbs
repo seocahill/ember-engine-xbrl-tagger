@@ -1,5 +1,5 @@
 <div class="form-group">
-  {{input value=query class="form-control" placeholder="search dimensions"}}
+  {{input data-test-search-dimension-input=true value=query class="form-control" placeholder="search dimensions"}}
 </div>
 {{#if last}}
   <button {{action "addDimension" last}} class="btn btn-outline-primary btn-block">Reuse {{last.name}}</button> 
@@ -9,7 +9,7 @@
     <a class="list-group-item" href="#" {{action 'addDimension' item}}><i class="fa fa-plus fa-fw"></i>{{item.name}}</a>
   {{else}}
     {{#each dimensions as |item|}}
-    <a class="list-group-item" href="#" {{action 'removeDimension' item}}><i class="fa fa-trash fa-fw"></i>{{item.name}}</a>
+      <a data-test-dimension={{item.id}} class="list-group-item" href="#" {{action 'removeDimension' item}}><i class="fa fa-trash fa-fw"></i>{{item.name}}</a>
     {{else}}
       <li class="list-group-item">Using default dimensions</li>
     {{/each}}

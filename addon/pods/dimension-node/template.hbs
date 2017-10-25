@@ -13,8 +13,8 @@
             <a href="#" class="btn btn-secondary btn-sm" {{action "addDimension" child}}><i class="fa fa-plus fa-fw"></i></a>
           </div>
         {{/if}}
-        <div class="p-2">
-          <span class="text-truncate">{{child.name}} {{#if (eq child.shortArcrole "hypercube-dimension")}}{{unless child.defaultDimension "(no default)"}}{{/if}}</span>
+        <div class="p-2 text-truncate">
+          {{child.name}} {{#if (eq child.shortArcrole "hypercube-dimension")}}{{unless child.defaultDimension "(no default)"}}{{/if}}
         </div>
         <div class="p-2">
           {{#link-to 'dimension-node' child class="text-right"}}<i class="fa fa-chevron-right fa-fw"></i>{{/link-to}}

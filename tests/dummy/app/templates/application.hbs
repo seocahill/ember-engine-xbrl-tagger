@@ -1,9 +1,13 @@
 <div class="container-fluid p-4">
-  <div class="row mt-4 p-2">
-    <div class="col-6">
-      <h5>Financial Statements of XYZ ltd 2016.</h5>
-      <table class="table">
+  <div class="row mt-4 p-4">
+    <div class="col-8">
+      <table class="table table-bordered">
         <thead>
+          <tr>
+            <th colspan="4">
+              Financial Statements of XYZ ltd 2016
+            </th>
+          </tr>
           <tr>
             <th>Description</th>
             <th></th>
@@ -38,7 +42,7 @@
           </tr>
         </tbody>
       </table>
-      <table class="table">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>Director's Report</th>
@@ -51,6 +55,6 @@
         </tbody>
       </table>
     </div>
-    <div class="col-6"> {{outlet}}</div>
+    <div class="col-4"> {{outlet}}</div>
   </div>
 </div>

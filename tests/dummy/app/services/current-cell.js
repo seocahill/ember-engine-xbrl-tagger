@@ -19,7 +19,7 @@ export default Ember.Service.extend({
       settings: null,
       save: () => true,
       tag: null,
-      dimensions: []
+      dimensions: Ember.A([])
     });
   }
 });
